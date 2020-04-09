@@ -17,14 +17,14 @@ const axiosRequest = <T>(request: Promise<AxiosResponse<T>>) =>{
 }
 
 export const useGetHttp = <T>(url: string, data?: any)=> {
-    return axiosRequest(axios.get<T>(`http://localhost:3333/${url}`, data))
+    return axiosRequest(axios.get<T>(`${process.env.VUE_APP_API}/${url}`, data))
 }
 
 export const usePostHttp = <T>(url: string, data: any, options?: any)=> {
-     return axiosRequest(axios.post<T>(`http://localhost:3333/${url}`, data, options))
+     return axiosRequest(axios.post<T>(`${process.env.VUE_APP_API}/${url}`, data, options))
 }
 
 export const useDeleteHttp = <T>(url: string, data: any)=> {
-     return axiosRequest(axios.delete<T>(`http://localhost:3333/${url}`, data))
+     return axiosRequest(axios.delete<T>(`${process.env.VUE_APP_API}/${url}`, data))
 }
 

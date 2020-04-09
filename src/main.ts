@@ -10,7 +10,6 @@ import './core/global/components'
 Vue.use(VueCompositionApi);
 Vue.use(VueHooks);
 
-
 Vue.config.productionTip = false
 new Vue({
   router,
