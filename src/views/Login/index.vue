@@ -41,8 +41,8 @@ export default Vue.extend({
   },
   setup(props){
 
-    // const loginNumber = ref('')
-    const loginNumber = ref('29b54139')
+    const loginNumber = ref('')
+    // const loginNumber = ref('29b54139')
     
     const onSubmit = () => {
       useLoginUser(loginNumber.value)
