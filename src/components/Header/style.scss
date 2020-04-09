@@ -1,0 +1,41 @@
+header{
+    display: flex;
+    align-items: center;
+
+    span {
+        font-size: 20px;
+        margin-left: 24px;
+        margin-right: auto;
+    }
+
+    .logo{
+        position: relative;
+        right: 170px;
+        right: 0;
+        margin-left: 0;
+        margin-right: auto;
+        svg{
+          width: 151px;
+          height: 64px;
+        }
+    }
+
+    .new-case {
+        width: 260px;
+        margin-left: auto;
+        margin-top: 0;
+    }
+
+    button {
+        height: 60px;
+        width: 60px;
+        border-radius: 8px;
+        border: 1px solid #DCDCE6;
+        margin-left: 16px;
+        transition: border-color 0.2s;
+
+        &:hover {
+            border-color: #999;
+        }
+    }
+}
