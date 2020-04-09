@@ -13,6 +13,8 @@ export const useLogout = async () =>{
     })
     if(!value) return;
 
+    window.localStorage.clear()
+
     const { router } = useRouter()
 
     router.push('/')
