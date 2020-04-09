@@ -36,6 +36,7 @@ export const useCreate = async ({
         async success => {
             useToasty({ 
                 title: `Olá, ${name}`,
+                text: `seu ID de autenticação: ${success.value.id}`,
                 icon: 'success'
             })
 

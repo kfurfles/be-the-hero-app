@@ -5,9 +5,12 @@ import Register from '@/views/Register/index.vue'
 import { LOGIN, NEW_INCIDENT, PROFILE, REGISTER } from './router-paths'
 import { RouteConfig } from 'vue-router'
 
-const hasOngObj = JSON.parse(localStorage.getItem('be-the-hero-app') || '{}')['ong'] || {}
-const hasOngData = hasOngObj['id']
-const isAuthenticated = hasOngObj && hasOngData
+function isAuthenticated(){
+    const hasOngObj = JSON.parse(localStorage.getItem('be-the-hero-app') || '{}')['ong'] || {}
+    const hasOngData = hasOngObj['id']
+
+    return hasOngObj && hasOngData
+}
 
 export default [
     {
@@ -18,7 +21,7 @@ export default [
         ...REGISTER,
         component: Register,
         beforeEnter: (to, from, next) => {
-            if (!isAuthenticated) next({ path: '/' })
+            if (!isAuthenticated()) next({ path: '/' })
             next()
         }
     },
@@ -26,7 +29,7 @@ export default [
         ...PROFILE,
         component: Profile,
         beforeEnter: (to, from, next) => {
-            if (!isAuthenticated) next({ path: '/' })
+            if (!isAuthenticated()) next({ path: '/' })
             next()
         }
     },
@@ -34,7 +37,7 @@ export default [
         ...NEW_INCIDENT,
         component: Incident,
         beforeEnter: (to, from, next) => {
-            if (!isAuthenticated) next({ path: '/' })
+            if (!isAuthenticated()) next({ path: '/' })
             next()
         }
     }
