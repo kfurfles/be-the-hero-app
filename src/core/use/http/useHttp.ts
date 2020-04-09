@@ -1,16 +1,22 @@
-import { reactive, toRefs, isRef, ref, Ref } from '@vue/composition-api'
+import { ref, Ref } from '@vue/composition-api'
 import axios, { AxiosResponse } from 'axios'
+import { useActions } from '@u3u/vue-hooks'
 
 const axiosRequest = <T>(request: Promise<AxiosResponse<T>>) =>{
     const data: Ref<T> = ref({})
     const loading = ref(true)
     const error: Ref<any> = ref(null)
+    const { SET_STATUS_LOADING: setLoading } = useActions(['SET_STATUS_LOADING'])
 
     const fetch = async () =>{
+        setLoading(true)
         return request
         .then(({ data: res }) => (data.value = res))
         .catch((err) => (error.value = err.response.data))
-        .finally(() => (loading.value = false))
+        .finally(() => {
+            loading.value = false
+            setLoading(false)
+        })
     }
 
     return { data, loading, error, fetch }

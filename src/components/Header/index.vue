@@ -3,13 +3,13 @@
       <router-link class="logo" to="/">
         <HLogo />
       </router-link>
-      <span>Bem-vinda, {{ ongName }}</span>
+      <span class="ong-name">Bem-vinda, {{ ongName }}</span>
     
-      <router-link class="new-case" to="/incident/new">
-       <HButton class="new-case">Cadastrar novo caso</HButton>
+      <router-link class="new-case-link" to="/incident/new">
+        <HButton class="new-case">Cadastrar novo caso</HButton>
       </router-link>
 
-      <button @click="handleLogout" type="button">
+      <button @click="handleLogout" class="logout" type="button">
             <IconPower />
       </button>
     </header>

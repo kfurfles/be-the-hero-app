@@ -1,11 +1,7 @@
-import { toRefs, onMounted } from '@vue/composition-api'
-import { useActions } from '@u3u/vue-hooks'
-import { useGetHttp } from '../http/useHttp'
+import { toRefs } from '@vue/composition-api'
+import { useActions, useRouter } from '@u3u/vue-hooks'
 import { RootState } from '@/core/typings/StateTyping'
-import { tryAwait } from '@/core/utils/try-request'
-import { IncidentTyping } from '@/core/typings/IncidentTyping'
 import { useStateType } from '@/core/typings/EffectTyping'
-import { useAuthHeaders } from '../authentication/useAuthentication'
 
 export const useProfile = (useState: useStateType) => {
     const state = useState({
@@ -15,4 +11,12 @@ export const useProfile = (useState: useStateType) => {
     return {
         ...toRefs(state),
     }
+}
+
+export const useSetProfile = ({ name, id }) =>{
+    const { router } = useRouter()
+    const { SET_ONG_NAME: setName } = useActions(['SET_ONG_NAME'])
+
+    setName({ name, id })
+    return router.push('/profile')
 }

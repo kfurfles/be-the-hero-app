@@ -19,7 +19,7 @@
         </form>
 
       </section>
-      <img src="@/assets/heroes.png" alt="Heroes"/>
+      <img src="@/assets/heroes.png" class="hero-image" alt="Heroes"/>
     </div>
     
 
@@ -41,8 +41,8 @@ export default Vue.extend({
   },
   setup(props){
 
-    const loginNumber = ref('')
-    // const loginNumber = ref('29b54139')
+    // const loginNumber = ref('')
+    const loginNumber = ref('29b54139')
     
     const onSubmit = () => {
       useLoginUser(loginNumber.value)

@@ -9,5 +9,6 @@ export interface RootState {
         language: string,
         currency: string
     },
-    incidentList: IncidentTyping[]
+    incidentList: IncidentTyping[],
+    loading: boolean
 }

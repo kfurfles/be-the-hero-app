@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="incident-card">
       <strong>CASO:</strong>
       <p>{{ incident.title }}</p>
 
@@ -59,6 +59,6 @@ export default defineComponent({
 </script>
 
 
-<style>
-
+<style lang="scss">
+@import './style.scss';
 </style>

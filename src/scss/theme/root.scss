@@ -33,3 +33,10 @@ button {
       margin-right: 5px;
     }
 }
+
+#app{
+  @media (max-width:801px){
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

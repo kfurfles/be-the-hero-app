@@ -2,7 +2,7 @@
     <div class="register-container">
       <div class="content">
         <section>
-            <HLogo />
+            <HLogo class="logo-form"/>
 
           <h1>Cadastro</h1>
           <p>Faça o seu cadastro, entre na plataforma e 
@@ -13,47 +13,58 @@
           </router-link>
 
         </section>
-        <form >
+        <form @submit.prevent="onSubmit">
             
-            <HInput placeholder="Nome da ONG"/>
+            <HInput v-model="state.name" required placeholder="Nome da ONG"/>
         
+            <HInput v-model="state.email" required type="email" placeholder="E-mail" />
 
-            <HInput 
-                type="email" 
-                placeholder="E-mail" 
-            />
-
-            <HInput 
-                placeholder="WhatsApp" 
-            />
+            <HInput v-model="state.whatsapp" required type="tel" placeholder="WhatsApp" />
         
 
             <div class="input-group">
 
-                <HInput placeholder="Cidade" />
+              <HInput v-model="state.city" required placeholder="Cidade" />
 
-                <HInput placeholder="UF"
-                    style="width: 80%"
-                />
+              <HInput v-model="state.uf" required placeholder="UF" style="width: 80%" />
             </div>
 
             <HButton type="submit">Cadastrar</HButton> 
-            <!-- <button class="button" ></button> -->
         </form>
       </div>
     </div>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator'
+import Vue from 'vue'
 import LeftArrowIcon from '@/components/icons/logout/index.vue'
+import { reactive } from '@vue/composition-api'
+import { useCreate } from '../../core/use/ong/create'
 
-@Component({
-    components: {
-        LeftArrowIcon,
+export default Vue.extend({
+  components:{
+    LeftArrowIcon
+  },
+  setup(props, vm){
+
+    const state = reactive({
+      name: '',
+      email: '',
+      whatsapp: '',
+      city: '',
+      uf: ''
+    })
+
+    const onSubmit = () =>{
+      useCreate(state)
     }
+
+    return {
+      state,
+      onSubmit
+    }
+  }
 })
-export default class RegisterComponent extends Vue{}
 </script>
 
 <style lang="scss">

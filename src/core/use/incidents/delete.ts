@@ -1,11 +1,11 @@
-import { useToasty } from '../../swal/useSwal'
+import { useToasty } from '../swal/useSwal'
 import { useStateType } from '@/core/typings/EffectTyping';
 import { RootState } from '@/core/typings/StateTyping';
 import { IncidentTyping } from '@/core/typings/IncidentTyping';
-import { useDeleteHttp, } from '../../http/useHttp';
+import { useDeleteHttp, } from '../http/useHttp';
 import { tryAwait } from '@/core/utils/try-request';
 import { useActions } from '@u3u/vue-hooks';
-import { useAuthHeaders } from '../../authentication/useAuthentication';
+import { useAuthHeaders } from '../authentication/useAuthentication';
 
 export const useDeleteIncident = async (id: number, useState: useStateType) =>{
     const state = useState({

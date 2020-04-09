@@ -1,7 +1,7 @@
-import { useToasty } from '../../swal/useSwal'
-import { usePostHttp } from '../../http/useHttp';
+import { useToasty } from '../swal/useSwal'
+import { usePostHttp } from '../http/useHttp';
 import { tryAwait } from '@/core/utils/try-request';
-import { useAuthHeaders } from '../../authentication/useAuthentication';
+import { useAuthHeaders } from '../authentication/useAuthentication';
 
 export const useCreateIncident = async ({ title, description, value }: { title: string, description: string, value: number }) => {
 

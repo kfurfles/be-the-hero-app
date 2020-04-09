@@ -2,7 +2,7 @@
   <div class="new-incident-container">
     <div class="content">
       <section>
-        <HLogo />
+        <HLogo class="logo-form"/>
 
         <h1>Cadastrar novo caso</h1>
 
@@ -32,7 +32,7 @@ import Vue from "vue";
 import HTextArea from "@/components/HTextArea/index.vue";
 import LeftArrowIcon from "@/components/icons/logout/index.vue";
 import { useState, useRouter } from '@u3u/vue-hooks';
-import { useCreateIncident } from "../../core/use/user/useIncident";
+import { useCreateIncident } from "../../core/use/incidents";
 import { reactive, toRefs, SetupContext, computed, watchEffect } from "@vue/composition-api";
 import { VMoney } from 'v-money'
 

@@ -1,11 +1,11 @@
 <template>
-    <div class="profile-container">
+    <div class="profile">
     
     <HHeader />
 
     <h1>Casos cadastrados</h1>
-      <ul>
-        <li v-for="(incident,i) of incidentList" :key="i">
+      <ul class="profile__list">
+        <li class="profile__item" v-for="(incident,i) of incidentList" :key="i">
             <HIncidentCard  @onDelete="deleteHandle" :incident="incident"></HIncidentCard>
         </li>
       </ul>
@@ -20,7 +20,7 @@ import IconPower from '../../components/icons/power/index.vue'
 import HIncidentCard from '@/components/HIncidentCard/index.vue'
 import HHeader from '@/components/Header/index.vue'
 import { useProfile } from '../../core/use/user/useProfile'
-import { useDeleteIncident, useIncidentList } from '../../core/use/user/useIncident'
+import { useDeleteIncident, useIncidentList } from '../../core/use/incidents'
 import { toRefs } from '@vue/composition-api'
 import { useState } from '@u3u/vue-hooks'
 
