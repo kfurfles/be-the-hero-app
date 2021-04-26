@@ -24,7 +24,7 @@
     "vuex-persist": "2.2.0"
   },
   "devDependencies": {
-    "@types/jest": "24.9.1",
+    "@types/jest": "26.0.23",
     "@typescript-eslint/eslint-plugin": "2.25.0",
     "@typescript-eslint/parser": "2.25.0",
     "@vue/cli-plugin-babel": "4.2.3",
