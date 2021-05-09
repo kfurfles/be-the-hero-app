@@ -14,7 +14,7 @@
     "@vue/composition-api": "0.5.0",
     "axios": "0.19.2",
     "core-js": "3.6.4",
-    "sweetalert2": "9.10.7",
+    "sweetalert2": "10.16.7",
     "v-money": "0.8.1",
     "vue": "2.6.11",
     "vue-class-component": "7.2.3",
